@@ -238,4 +238,11 @@ export PACKAGE={CHART_NAME} # Only need to run once
 make clean
 ```
 
-Ensure that you've already saved your changes with `PACKAGE={CHART_NAME} make patch` and cleaned up your working directory with `PACKAGE={CHART_NAME} make clean`. Then, commit all the remaining changes to `packages/{CHART_NAME}` and submit your PR to the branch `main-source`.
+Ensure that you've already saved your changes with `PACKAGE={CHART_NAME} make patch` and cleaned up your working directory with `PACKAGE={CHART_NAME} make clean`. Then, commit all the remaining changes to `packages/{CHART_NAME}`.
+
+Once you've committed all the changes in your package, run `make charts` and add the updated `assets` and `charts` directories in a second commit so that your Pull Request contents are as following:
+
+    1st commit: Changes in package to add or update your chart
+    2nd commit: Result of running `make charts`
+
+At this point you are ready to submit a Pull Request to the `main-source` branch for review.
