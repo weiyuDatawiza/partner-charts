@@ -19,6 +19,7 @@ questions:
   group: "Access Broker Configuration"
 - variable: imagePullSecrets
   default: ""
+  type: string
   description: "kubernetes secret name used to pull datawiza access broker image"
   required: false
   label: imagePullSecrets
