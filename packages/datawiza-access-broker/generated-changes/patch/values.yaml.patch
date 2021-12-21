@@ -1,0 +1,15 @@
+--- charts-original/values.yaml
++++ charts/values.yaml
+@@ -39,7 +39,6 @@
+ service:
+   type: NodePort
+   port: 9772
+-  nodePort: 30001
+ 
+ ingress:
+   enabled: false
+@@ -84,4 +83,3 @@
+ 
+ PROVISIONING_KEY: ""
+ PROVISIONING_SECRET: ""
+-containerPort: 9772
