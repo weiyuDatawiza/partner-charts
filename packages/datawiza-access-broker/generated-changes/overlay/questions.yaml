@@ -22,7 +22,7 @@ questions:
   type: string
   description: "kubernetes secret name used to pull datawiza access broker image"
   required: false
-  label: imagePullSecrets
+  label: Image Pull Secrets
   group: "Access Broker Configuration"
 
 # Deployment Configuration
