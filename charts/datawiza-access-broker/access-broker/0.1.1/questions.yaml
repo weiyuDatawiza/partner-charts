@@ -1,0 +1,55 @@
+namespace: datawiza-access-broker
+labels:
+  io.rancher.certified: partner
+categories:
+- Application
+questions:
+# Access Broker Configuration
+- variable: PROVISIONING_KEY
+  default: ""
+  description: "PROVISIONING_KEY"
+  required: true
+  label: PROVISIONING_KEY
+  group: "Access Broker Configuration"
+- variable: PROVISIONING_SECRET
+  default: ""
+  description: "PROVISIONING_SECRET"
+  required: true
+  label: PROVISIONING_SECRET
+  group: "Access Broker Configuration"
+- variable: imagePullSecrets
+  default: ""
+  description: "kubernetes secret name used to pull datawiza access broker image"
+  required: false
+  label: imagePullSecrets
+  group: "Access Broker Configuration"
+
+# Deployment Configuration
+- variable: containerPort
+  default: 9772
+  type: int
+  description: "listen port of you application"
+  required: true
+  label: containerPort
+  group: "Deployment Configuration"
+
+# Service Configuration
+- variable: service.type
+  default: "ClusterIP"
+  type: enum
+  group: "Service Configuration"
+  options:
+    - "ClusterIP"
+    - "NodePort"
+    - "LoadBalancer"
+  required: true
+  label: Service Type
+  show_subquestion_if: "NodePort"
+  subquestions:
+  - variable: service.nodePort
+    default: ""
+    description: "NodePort port number (to set explicitly, choose port between 30000-32767)"
+    type: int
+    min: 30000
+    max: 32767
+    label: Service NodePort
